@@ -1,63 +1,67 @@
 html {
   box-sizing: border-box;
-
 }
 
 *,
 *:before,
 *:after {
-  box-sizing: inherit
+  box-sizing: inherit;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'TT Lakes Medium', Arial, Helvetica, sans-serif;
-
+  font-family: "TT Lakes Medium", Arial, Helvetica, sans-serif;
+  /* min-height: 100vh; */
+  min-height: 100vh;
 }
 
 .container {
+  position: relative;
   max-width: 320px;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100%;
   padding: 18px 24px;
-  box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2), -2px 0px 4px rgba(69, 79, 126, 0.02);
+  box-shadow: 16px 0px 52px rgba(14, 24, 80, 0.2),
+    -2px 0px 4px rgba(69, 79, 126, 0.02);
+  display: flex;
+  flex-direction: column;
 }
 
-header .header__container {}
+header .header__container {
+}
 
 header .header__body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
-.header__body .header__burger-icon {}
+.header__body .header__burger-icon {
+}
 
 .header__body .header__logo-icon {
   margin-right: 55px;
-
 }
 
 main .main__container {
   margin-top: 50px;
 }
 
-main .main__body {}
+main .main__body {
+}
 
 main .main__title p {
   margin: 0;
   padding: 0;
   font-size: 16px;
   /* font-family: lla; */
-  color: #7E7E82;
+  color: #7e7e82;
   letter-spacing: -0.2px;
 }
 
 main .main__navigation {
   margin-top: 32px;
-
 }
 
 .main__navigation ul {
@@ -68,13 +72,32 @@ main .main__navigation {
 
 .main__navigation li a {
   text-decoration: none;
-  color: #1B1C21;
+  color: #1b1c21;
   font-size: 16px;
   line-height: 24px;
-
+  position: relative;
+}
+/* .main__navigation li a:hover {
+  color: #7e7e82;
+} */
+.main__navigation li a::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  width: 5px;
+  height: 100%;
+  background-color: aqua;
+  opacity: 0;
+}
+.main__navigation li a:hover {
+  color: #7e7e82;
+}
+.main__navigation li a:hover::before {
+  opacity: 1;
+  transition: 1s;
 }
 
-.main__navigation li+li {
+.main__navigation li + li {
   margin-top: 32px;
 }
 
@@ -86,7 +109,6 @@ footer .footer__container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-
 }
 
 .footer__body .footer__icons div {
@@ -96,18 +118,19 @@ footer .footer__container {
 .footer__contacts p {
   margin: 0;
   padding: 0;
-  color: #1B1C21;
+  color: #1b1c21;
 }
 
 .footer__contacts .footer__contacts__mail {
   margin-top: 16px;
-
 }
 
 .footer__contacts .footer__contacts__tel {
   margin-top: 12px;
-  font-family: 'TT Lakes Bold';
+  font-family: "TT Lakes Bold";
   font-size: 24px;
   line-height: 32px;
-
+}
+footer {
+  margin-top: auto;
 }
